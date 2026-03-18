@@ -71,7 +71,7 @@ const galleryImages = [
     caption: "Evening street market vibes",
   },
   {
-    src: "https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=1400&q=80",
+    src: "https://images.unsplash.com/photo-1768667493301-c06605de45f6?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     caption: "Coastal path at golden hour",
   },
   {
