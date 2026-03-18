@@ -510,6 +510,7 @@ function setupCarousel() {
   let isPointerDown = false;
   let startX = 0;
   let deltaX = 0;
+  let dragWidth = 1;
 
   const buildDots = () => {
     dots.innerHTML = "";
@@ -532,6 +533,10 @@ function setupCarousel() {
     track.style.transform = `translateX(-${index * 100}%)`;
     Array.from(dots.children).forEach((dot, i) => {
       dot.setAttribute("aria-selected", i === index ? "true" : "false");
+    });
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("is-active", i === index);
+      slide.setAttribute("aria-hidden", i === index ? "false" : "true");
     });
   };
 
@@ -571,22 +576,32 @@ function setupCarousel() {
   carousel.addEventListener("mouseenter", stop);
   carousel.addEventListener("mouseleave", start);
 
+  const updateDragWidth = () => {
+    dragWidth = carousel.getBoundingClientRect().width || 1;
+  };
+  updateDragWidth();
+  window.addEventListener("resize", updateDragWidth);
+
   carousel.addEventListener("pointerdown", (e) => {
     isPointerDown = true;
     startX = e.clientX;
     deltaX = 0;
     stop();
     carousel.setPointerCapture(e.pointerId);
+    track.classList.add("is-dragging");
   });
 
   carousel.addEventListener("pointermove", (e) => {
     if (!isPointerDown) return;
     deltaX = e.clientX - startX;
+    const dragPercent = (deltaX / dragWidth) * 100;
+    track.style.transform = `translateX(calc(-${index * 100}% + ${dragPercent}%))`;
   });
 
-  carousel.addEventListener("pointerup", () => {
+  const endDrag = () => {
     if (!isPointerDown) return;
     isPointerDown = false;
+    track.classList.remove("is-dragging");
     const threshold = 40;
     if (deltaX > threshold) {
       prev();
@@ -594,7 +609,10 @@ function setupCarousel() {
       next();
     }
     start();
-  });
+  };
+
+  carousel.addEventListener("pointerup", endDrag);
+  carousel.addEventListener("pointercancel", endDrag);
 
   carousel.addEventListener("keydown", (e) => {
     if (e.key === "ArrowLeft") {
@@ -631,8 +649,8 @@ function openLightbox(src, caption) {
 function renderGallery() {
   dom.galleryGrid.innerHTML = galleryImages
     .map(
-      (item) => `
-      <div class="gallery-item" data-src="${item.src}" data-caption="${item.caption}">
+      (item, i) => `
+      <div class="gallery-item" data-src="${item.src}" data-caption="${item.caption}" style="--reveal-delay:${i * 70}ms">
         <img src="${item.src}" alt="${item.caption}" loading="lazy" />
         <div class="gallery-overlay"><span>View</span></div>
       </div>

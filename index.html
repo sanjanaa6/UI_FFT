@@ -36,29 +36,47 @@
   <main>
     <!-- Hero -->
     <section class="hero" id="home">
-      <video class="hero-video" autoplay muted loop playsinline>
-        <source src="https://cdn.coverr.co/videos/coverr-sunrise-over-tropical-beach-4552/1080p.mp4" type="video/mp4" />
-        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80" alt="Beach sunrise" />
-      </video>
-      <div class="hero-overlay"></div>
-      <div class="hero-content container">
-        <div class="hero-panel">
-          <div class="hero-badges" aria-label="Highlights">
-            <span class="hero-badge">Curated Picks</span>
-            <span class="hero-badge">Smart Planner</span>
-            <span class="hero-badge">Gallery + Lightbox</span>
+      <div class="hero-grid container">
+        <header class="hero-copy">
+          <div class="hero-pillset" aria-label="Highlights">
+            <span class="hero-pill">Curated Picks</span>
+            <span class="hero-pill">Smart Planner</span>
+            <span class="hero-pill">Gallery + Lightbox</span>
           </div>
-          <h1>Discover Your Next Adventure</h1>
-          <p>Find handpicked destinations, travel tips, and plan your dream getaway.</p>
-          <div class="search-ui search-ui-glass" aria-label="Search destinations">
+          <h1 class="hero-title">Discover Your Next Adventure</h1>
+          <p class="hero-subtitle">Handpicked trips, local stories, and a planner that adapts to your pace.</p>
+          <form class="hero-search" aria-label="Search destinations">
             <input id="searchInput" type="search" placeholder="Search destinations..." aria-label="Search destinations" />
             <button id="searchBtn" type="button">Search</button>
+          </form>
+          <div class="hero-stats" aria-label="Quick stats">
+            <div class="stat">
+              <span class="stat-value">120+</span>
+              <span class="stat-label">Destinations</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value">9.8</span>
+              <span class="stat-label">Rating</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value">Fast</span>
+              <span class="stat-label">Plan builder</span>
+            </div>
           </div>
+        </header>
+
+        <div class="hero-image" aria-hidden="true">
+          <img
+            src="https://images.unsplash.com/photo-1546961230-78285e50ca1a?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt=""
+            loading="lazy"
+          />
         </div>
-        <a class="scroll-cue" href="#experiences" aria-label="Scroll to experiences">
-          <span class="scroll-dot"></span>
-        </a>
       </div>
+
+      <a class="scroll-cue" href="#experiences" aria-label="Scroll to experiences">
+        <span class="scroll-dot"></span>
+      </a>
     </section>
 
 
