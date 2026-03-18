@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard • Tourist Vista</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="auth-page">
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="dashboard.html">Tourist Vista</a>
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="hamburger"></span>
+        </button>
+        <ul class="nav-list">
+          <li><a href="dashboard.html" aria-current="page">Dashboard</a></li>
+          <li><a href="index.html">Landing</a></li>
+          <li class="nav-logout">
+            <button id="logoutBtn" type="button">Logout</button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="auth-main">
+      <div class="container auth-shell" aria-label="Dashboard">
+        <div class="auth-visual" aria-hidden="true">
+          <div class="auth-visual-inner">
+            <div class="auth-badge">Profile</div>
+            <h1 class="auth-visual-title">Welcome to your space</h1>
+            <p class="auth-visual-subtitle">Quick profile summary and a shortcut to start exploring.</p>
+            <div class="auth-visual-chips" aria-hidden="true">
+              <span class="auth-chip">Favorites</span>
+              <span class="auth-chip">Dark Mode</span>
+              <span class="auth-chip">Planner</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="auth-card">
+          <div class="auth-card-header">
+            <h2 class="auth-title">Your Dashboard</h2>
+            <p class="auth-subtitle">Profile overview and quick access to Tourist Vista.</p>
+          </div>
+
+          <div class="auth-form">
+            <div class="auth-profile">
+              <div class="auth-avatar" aria-hidden="true">TV</div>
+              <div class="auth-profile-meta">
+                <div class="auth-profile-name" id="profileName">—</div>
+                <div class="auth-profile-sub" id="profileLastLogin">—</div>
+              </div>
+            </div>
+
+            <div class="auth-actions">
+              <a class="btn" href="index.html">Go to Landing Page</a>
+              <button class="btn btn-secondary" id="clearProfileBtn" type="button">Clear Profile</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>© <span id="year"></span> Tourist Vista</p>
+      <p class="footer-note">Dashboard • Static demo</p>
+    </div>
+  </footer>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>

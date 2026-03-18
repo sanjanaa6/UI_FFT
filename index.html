@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tourist Vista</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top">Tourist Vista</a>
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span class="hamburger"></span>
+        </button>
+        <ul class="nav-list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#destinations">Destinations</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#planner">Planner</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li class="nav-logout">
+            <button id="logoutBtn" type="button">Logout</button>
+          </li>
+          <li class="theme-toggle">
+            <button id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <video class="hero-video" autoplay muted loop playsinline>
+        <source src="https://cdn.coverr.co/videos/coverr-sunrise-over-tropical-beach-4552/1080p.mp4" type="video/mp4" />
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80" alt="Beach sunrise" />
+      </video>
+      <div class="hero-overlay"></div>
+      <div class="hero-content container">
+        <div class="hero-panel">
+          <div class="hero-badges" aria-label="Highlights">
+            <span class="hero-badge">Curated Picks</span>
+            <span class="hero-badge">Smart Planner</span>
+            <span class="hero-badge">Gallery + Lightbox</span>
+          </div>
+          <h1>Discover Your Next Adventure</h1>
+          <p>Find handpicked destinations, travel tips, and plan your dream getaway.</p>
+          <div class="search-ui search-ui-glass" aria-label="Search destinations">
+            <input id="searchInput" type="search" placeholder="Search destinations..." aria-label="Search destinations" />
+            <button id="searchBtn" type="button">Search</button>
+          </div>
+        </div>
+        <a class="scroll-cue" href="#experiences" aria-label="Scroll to experiences">
+          <span class="scroll-dot"></span>
+        </a>
+      </div>
+    </section>
+
+
+
+    <section class="section section-alt" id="experiences" data-reveal>
+      <div class="container">
+        <div class="section-header">
+          <h2>Signature Experiences</h2>
+          <p>Swipe through moments that make every trip unforgettable.</p>
+        </div>
+
+        <div class="carousel" id="experienceCarousel" aria-roledescription="carousel" aria-label="Signature experiences">
+          <div class="carousel-viewport">
+            <div class="carousel-track" id="carouselTrack">
+              <article class="carousel-slide" aria-label="Slide 1">
+                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80" alt="Mountain sunset" loading="lazy" />
+                <div class="carousel-caption">
+                  <h3>Golden Hour Trails</h3>
+                  <p>Chase sunsets on scenic ridges and quiet viewpoints.</p>
+                </div>
+              </article>
+
+              <article class="carousel-slide" aria-label="Slide 2">
+                <img src="https://images.unsplash.com/photo-1763060869007-fc10548b0aae?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Hillside sunrise" loading="lazy" />
+                <div class="carousel-caption">
+                  <h3>Sunrise Escapes</h3>
+                  <p>Start early for the calmest skies and softest light.</p>
+                </div>
+              </article>
+              <article class="carousel-slide" aria-label="Slide 3">                <img src="https://images.unsplash.com/photo-1715107946118-9340e7d01a77?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Coastal walk" loading="lazy" />
+                <div class="carousel-caption">
+                  <h3>Coastal Walks</h3>
+                  <p>Salt air, open horizons, and easygoing promenades.</p>
+                </div>
+              </article>
+            </div>          </div>
+          <button class="carousel-btn" type="button" id="carouselPrev" aria-label="Previous slide">‹</button>
+          <button class="carousel-btn" type="button" id="carouselNext" aria-label="Next slide">›</button>
+          <div class="carousel-dots" id="carouselDots" role="tablist" aria-label="Carousel navigation"></div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Featured Destinations -->
+    <section class="section" id="featured" data-reveal>
+      <div class="container">
+        <div class="section-header">
+          <h2>Featured Destinations</h2>
+          <p>Handpicked spots to inspire your next journey.</p>
+        </div>
+        <div class="card-grid" id="featuredGrid">
+          <article class="card">
+            <div class="card-media" style="background-image:url('https://plus.unsplash.com/premium_photo-1697729594707-0fc9e51c8eed?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"></div>
+            <div class="card-body">
+              <h3>Goa</h3>
+              <p>Sun-soaked beaches, vibrant nightlife, and Portuguese charm.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-media" style="background-image:url('https://images.unsplash.com/photo-1523544261025-3159599b1fc3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"></div>
+            <div class="card-body">
+              <h3>Mysore</h3>
+              <p>Majestic palaces, royal heritage, and peaceful gardens.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-media" style="background-image:url('https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"></div>
+            <div class="card-body">
+              <h3>Manali</h3>
+              <p>Snow-capped peaks, winding valleys, and cozy mountain vibes.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Travel Tips -->
+    <section class="section section-alt" id="tips" data-reveal>
+      <div class="container">
+        <div class="section-header">
+          <h2>Travel Tips</h2>
+          <p>Small habits lead to the best adventures.</p>
+        </div>
+        <div class="tips-grid">
+          <div class="tip">
+            <h3>Pack Smart</h3>
+            <p>Choose versatile clothing, pack a travel first-aid kit, and keep chargers within reach.</p>
+          </div>
+          <div class="tip">
+            <h3>Stay Flexible</h3>
+            <p>Leave room for spontaneous discoveries—some of the best experiences are unplanned.</p>
+          </div>
+          <div class="tip">
+            <h3>Learn Local</h3>
+            <p>Pick up a few phrases, try street food, and ask locals for hidden gems.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Destinations Section -->
+
+    <section class="section" id="destinations" data-reveal>
+      <div class="container">
+        <div class="section-header">
+          <h2>Destinations</h2>
+          <p>Browse popular spots and find your next trip.</p>
+        </div>
+        <div class="filter-bar" aria-label="Destination filters">
+          <div class="filter-left">
+            <input id="destSearch" type="search" placeholder="Filter by name..." aria-label="Filter destinations" />
+            <span class="filter-hint">Try: Goa, Kerala, Manali</span>
+          </div>
+          <div class="filter-actions" aria-label="Destination controls">
+            <label class="select" aria-label="Sort destinations">
+              <span class="select-label">Sort</span>
+              <select id="destSort" aria-label="Sort destinations">
+                <option value="featured" selected>Featured</option>
+                <option value="az">A–Z</option>
+              </select>
+            </label>
+            <button class="btn btn-secondary" id="favoritesToggle" type="button" aria-pressed="false">Show Favorites</button>
+          </div>
+        </div>
+        <div class="chips" id="destChips" aria-label="Quick filters"></div>
+        <div class="card-grid" id="destGrid">
+          <!-- Cards injected by script -->
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Destination modal -->
+    <div class="modal" id="destinationModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+      <div class="modal-backdrop" data-close="true"></div>
+      <div class="modal-content" role="document">
+        <button class="modal-close" type="button" aria-label="Close" data-close="true">×</button>
+        <div class="modal-body">
+          <div class="modal-gallery" id="modalGallery"></div>
+          <div class="modal-details">
+            <h2 id="modalTitle">Destination</h2>
+            <p id="modalDescription"></p>
+            <div class="modal-meta">
+              <div>
+                <h4>Best time to visit</h4>
+                <p id="modalBestTime"></p>
+              </div>
+              <div>
+                <h4>Popular attractions</h4>
+                <ul id="modalAttractions"></ul>
+              </div>
+              <div>
+                <h4>Weather</h4>
+                <div class="weather-card" id="modalWeather">
+                  <span class="weather-temp">28°C</span>
+                  <span class="weather-desc">Sunny</span>
+                </div>              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Travel Planner -->
+
+    <section class="section section-alt" id="planner" data-reveal>
+      <div class="container">
+        <div class="section-header">
+          <h2>Travel Planner</h2>
+          <p>Plan your next getaway with a quick mock itinerary.</p>
+        </div>
+
+        <form class="planner-form" id="plannerForm" novalidate>
+          <div class="form-row">
+            <label for="planDestination">Destination</label>
+            <input id="planDestination" type="text" placeholder="e.g., Kerala" required />
+            <span class="error" aria-live="polite"></span>
+          </div>
+          <div class="form-row">
+            <label for="planDays">Days</label>
+            <input id="planDays" type="number" min="1" placeholder="5" required />
+            <span class="error" aria-live="polite"></span>
+          </div>
+          <div class="form-row">
+            <label for="planBudget">Budget (₹)</label>
+            <input id="planBudget" type="number" min="0" placeholder="25000" required />
+            <span class="error" aria-live="polite"></span>
+          </div>
+          <button class="btn" type="submit">Create Plan</button>
+        </form>
+        <div class="plan-result" id="planResult" hidden>
+          <h3>Your Quick Plan</h3>
+          <p id="planSummary"></p>
+          <ul class="plan-highlights" id="planHighlights"></ul>
+          <button class="btn btn-secondary" id="planReset">Start Over</button>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Gallery Section -->
+    <section class="section" id="gallery" data-reveal>
+      <div class="container">
+        <div class="section-header">
+          <h2>Gallery</h2>
+          <p>Browse moments from around the world.</p>
+        </div>
+        <div class="gallery-grid" id="galleryGrid">
+
+          <!-- Images injected by script -->
+
+        </div>
+      </div>    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" hidden>
+      <div class="lightbox-backdrop" data-close="true"></div>
+      <div class="lightbox-content">
+        <button class="lightbox-close" type="button" aria-label="Close" data-close="true">×</button>
+        <img id="lightboxImg" alt="" />
+        <p id="lightboxCaption"></p>
+      </div>
+   </div>
+    <!-- Contact Section -->
+    <section class="section section-alt" id="contact" data-reveal>
+      <div class="container">
+        <div class="section-header">
+          <h2>Contact Us</h2>
+          <p>Have a question? Send us a message and we'll get back soon.</p>
+        </div>
+        <div class="contact-grid">
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-row">
+              <label for="contactName">Name</label>
+              <input id="contactName" type="text" placeholder="Your name" required />
+              <span class="error" aria-live="polite"></span>
+            </div>
+            <div class="form-row">
+              <label for="contactEmail">Email</label>
+              <input id="contactEmail" type="email" placeholder="you@example.com" required />
+              <span class="error" aria-live="polite"></span>
+            </div>
+            <div class="form-row">
+              <label for="contactMessage">Message</label>
+              <textarea id="contactMessage" rows="4" placeholder="Tell us about your trip plans" required></textarea>
+              <span class="error" aria-live="polite"></span>
+            </div>
+            <div class="contact-actions">
+              <button class="btn" type="submit">Send Message</button>
+              <p class="form-success" id="contactSuccess" hidden>Thanks! We'll get back to you soon.</p>
+            </div>
+          </form>
+          <aside class="contact-card" aria-label="Contact information">
+            <h3>Let’s plan something unforgettable</h3>
+            <p>Share your travel style and dates—we’ll recommend a quick itinerary and must-see spots.</p>
+
+            <div class="contact-list">
+              <div class="contact-item">
+                <span class="contact-k">Email</span>
+                <a class="contact-v" href="mailto:hello@touristvista.demo">hello@touristvista.demo</a>
+              </div>
+              <div class="contact-item">
+                <span class="contact-k">Phone</span>
+                <a class="contact-v" href="tel:+910000000000">+91 00000 00000</a>
+              </div>
+              <div class="contact-item">
+                <span class="contact-k">Hours</span>
+                <span class="contact-v">Mon–Sat, 10:00–18:00</span>
+              </div>
+              <div class="contact-item">
+                <span class="contact-k">Location</span>
+                <span class="contact-v">India • Remote support</span>
+              </div>
+            </div>
+
+            <div class="contact-badges" aria-label="Highlights">
+              <span class="badge">Fast replies</span>
+              <span class="badge">Curated stays</span>
+              <span class="badge">Local picks</span>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer" aria-label="Footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand footer-logo" href="#top">Tourist Vista</a>
+        <p class="footer-desc">A polished travel UI prototype with handpicked destinations, planning tools, and a modern experience.</p>
+        <div class="footer-social" aria-label="Social links">
+          <a class="social-btn" href="#" aria-label="Instagram">IG</a>
+          <a class="social-btn" href="#" aria-label="YouTube">YT</a>
+          <a class="social-btn" href="#" aria-label="X">X</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="#featured">Featured</a>
+        <a href="#destinations">Destinations</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#planner">Planner</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="#contact">Contact</a>
+        <a href="#tips">Travel tips</a>
+        <a href="#experiences">Experiences</a>
+        <a href="#top">Back to top</a>
+      </div>
+      <div class="footer-col footer-news">
+        <h4>Get updates</h4>
+        <p>New destinations and travel ideas—once in a while.</p>
+        <form class="newsletter" action="#" onsubmit="return false">
+          <input type="email" placeholder="you@example.com" aria-label="Email address" />
+          <button class="btn" type="submit">Subscribe</button>
+        </form>
+        <p class="footer-mini">No backend. This is UI-only.</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="year"></span> Tourist Vista</p>
+      <p class="footer-note">Built with HTML, CSS & JavaScript • Static demo</p>
+    </div>
+  </footer>
+  <div class="toast-stack" id="toastStack" aria-live="polite" aria-relevant="additions"></div>
+  <script src="script.js"></script>
+</body>
+</html>
+

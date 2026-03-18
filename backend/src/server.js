@@ -1,0 +1,9 @@
+import { createApp } from "./app.js";
+
+const app = createApp();
+
+const port = process.env.PORT ? Number(process.env.PORT) : 5000;
+
+app.listen(port, () => {
+  console.log(`Backend running on http://localhost:${port}`);
+});

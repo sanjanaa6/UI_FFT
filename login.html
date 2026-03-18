@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login • Tourist Vista</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="auth-page">
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">Tourist Vista</a>
+      <nav class="nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="auth-main">
+    <section class="container auth-shell" aria-label="Login">
+      <div class="auth-visual" aria-hidden="true">
+        <div class="auth-visual-inner">
+          <div class="auth-badge">Secure access</div>
+          <h1 class="auth-visual-title">Plan smarter trips</h1>
+          <p class="auth-visual-subtitle">Sign in to access your dashboard and start exploring destinations.</p>
+          <div class="auth-visual-chips" aria-hidden="true">
+            <span class="auth-chip">Destinations</span>
+            <span class="auth-chip">Gallery</span>
+            <span class="auth-chip">Planner</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="auth-card">
+        <div class="auth-card-header">
+          <h2 class="auth-title">Welcome back</h2>
+          <p class="auth-subtitle">Login to continue to Tourist Vista.</p>
+        </div>
+
+        <form class="auth-form" id="loginForm" autocomplete="off">
+          <div class="form-row">
+            <label for="username">Username</label>
+            <input id="username" name="username" type="text" placeholder="Enter username" required />
+          </div>
+          <div class="form-row">
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" placeholder="Enter password" required />
+          </div>
+          <div class="form-actions auth-actions">
+            <button class="btn" type="submit">Login</button>
+            <a class="btn btn-secondary" href="index.html">Continue as guest</a>
+          </div>
+          <p id="loginError" class="form-hint auth-error" style="display:none; color: #ef4444;"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Tourist Vista</p>
+      <a class="footer-top" href="#top">Back to top</a>
+    </div>
+  </footer>
+
+  <script src="login.js"></script>
+</body>
+</html>
