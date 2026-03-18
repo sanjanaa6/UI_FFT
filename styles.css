@@ -448,6 +448,19 @@ img {
     linear-gradient(180deg, rgba(10, 18, 33, 0.92), rgba(8, 13, 23, 0.89));
 }
 
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: -18%;
+  background-image: var(--hero-bg);
+  background-size: cover;
+  background-position: center;
+  filter: blur(1px) saturate(0);
+  opacity: 0.22;
+  transform: scale(1.12);
+  pointer-events: none;
+}
+
 .hero::before {
   content: "";
   position: absolute;
